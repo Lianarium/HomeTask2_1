@@ -1,0 +1,7 @@
+c:\users\user1\source\repos\HomeTask2\HomeTask2\bin\Debug\HomeTask2.exe.config
+c:\users\user1\source\repos\HomeTask2\HomeTask2\bin\Debug\HomeTask2.exe
+c:\users\user1\source\repos\HomeTask2\HomeTask2\bin\Debug\HomeTask2.pdb
+c:\users\user1\source\repos\HomeTask2\HomeTask2\obj\Debug\HomeTask2.csprojResolveAssemblyReference.cache
+c:\users\user1\source\repos\HomeTask2\HomeTask2\obj\Debug\HomeTask2.csproj.CoreCompileInputs.cache
+c:\users\user1\source\repos\HomeTask2\HomeTask2\obj\Debug\HomeTask2.exe
+c:\users\user1\source\repos\HomeTask2\HomeTask2\obj\Debug\HomeTask2.pdb
