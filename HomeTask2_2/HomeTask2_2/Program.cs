@@ -22,15 +22,22 @@ namespace HomeTask2_2
                 yes = Console.ReadLine();
 
             } while (yes == "y");
-            obj.CheckType(obj.lineList, obj.IntList, obj.DoubleList, obj.NotNum);
+
+			obj.OutputList(obj.lineList);
+		
+			obj.CheckType(obj.lineList, obj.IntList, obj.DoubleList, obj.NotNum);
              
             Console.WriteLine("Number of integers: " + obj.IntList.Count);
             Console.WriteLine("Number of doubles: " + obj.DoubleList.Count);
             Console.WriteLine("Number of others: " + obj.NotNum.Count);
-            Console.WriteLine(obj.AverageInt(obj.IntList));
-            Console.WriteLine(obj.AverageDouble(obj.DoubleList));
+			obj.OutputList(obj.DoubleList);
+			Console.WriteLine(obj.AverageInt(obj.IntList));
+			Console.WriteLine(obj.AverageDouble(obj.DoubleList));
             obj.RightFormatOutputInt(obj.IntList);
-            
-        }
+			obj.RightFormatOutputDouble(obj.DoubleList);
+			obj.NotNumSort(obj.NotNum);
+			//obj.OutputList(obj.NotNum);
+
+		}
     }
 }

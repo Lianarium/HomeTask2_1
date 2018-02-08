@@ -5,3 +5,9 @@ C:\Users\User1\source\repos\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.csproj
 C:\Users\User1\source\repos\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.exe
 C:\Users\User1\source\repos\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.pdb
 C:\Users\User1\source\repos\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.csprojResolveAssemblyReference.cache
+C:\Users\Alina_Apet\Documents\HT2\HomeTask2_1\HomeTask2_2\HomeTask2_2\bin\Debug\HomeTask2_2.exe.config
+C:\Users\Alina_Apet\Documents\HT2\HomeTask2_1\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.exe
+C:\Users\Alina_Apet\Documents\HT2\HomeTask2_1\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.pdb
+C:\Users\Alina_Apet\Documents\HT2\HomeTask2_1\HomeTask2_2\HomeTask2_2\bin\Debug\HomeTask2_2.exe
+C:\Users\Alina_Apet\Documents\HT2\HomeTask2_1\HomeTask2_2\HomeTask2_2\bin\Debug\HomeTask2_2.pdb
+C:\Users\Alina_Apet\Documents\HT2\HomeTask2_1\HomeTask2_2\HomeTask2_2\obj\Debug\HomeTask2_2.csprojResolveAssemblyReference.cache

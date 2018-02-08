@@ -1,30 +1,32 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
- 
+using Microsoft.VisualBasic;
 
 namespace HomeTask2_2
 {
-    class LineWork
+	class LineWork
     {
         public LineWork()
         {
             lineList = new ArrayList();
+			lineList_no_commas = new ArrayList();
             IntList = new ArrayList();
             DoubleList = new ArrayList();
             NotNum = new ArrayList();
+			nc = new NameComparer();
 
         }
 
         public ArrayList lineList;
-        public ArrayList IntList;
+		public ArrayList lineList_no_commas;
+		public ArrayList IntList;
         public ArrayList DoubleList;
         public ArrayList NotNum;
+		public NameComparer nc;
+		public object NameComparer { get; private set; }
 
-        public string InsertString()
+		public string InsertString()
         {
             Console.WriteLine("Enter new line:");
             string line = Console.ReadLine();
@@ -36,13 +38,43 @@ namespace HomeTask2_2
             this.lineList.Add(line);
         }
 
-        public void OutputList(ArrayList obj)
+		 public void OutputList(ArrayList obj)
         {
             foreach (var item in obj)
                 Console.WriteLine(item+"*");
         }
 
-        public void CheckType(ArrayList obj1, ArrayList obj2, ArrayList obj3, ArrayList obj4)
+
+		public string ChangeCommasToPointsProcess(string item)
+		{
+			 
+				char[] stringArray = item.ToCharArray();
+				for (int i=0; i<stringArray.Count(); i++)
+				{
+					if (stringArray[i] == ',')
+						stringArray[i] = '.';
+					//Console.WriteLine(stringArray[i]);
+				}
+
+			 
+			item = new string (stringArray);
+			
+			return item;
+
+		}
+
+
+
+		/*public ArrayList ChangeCommasToPointsPrepare(ArrayList obj)
+		{
+			foreach (string item  in obj)
+			{
+				 
+			}
+		}*/
+
+
+		public void CheckType(ArrayList obj1, ArrayList obj2, ArrayList obj3, ArrayList obj4)
         {
             int integer;
             double doublenum;
@@ -50,11 +82,13 @@ namespace HomeTask2_2
             foreach (string item in obj1)
             {
 
-                if (int.TryParse(item, out integer))
-                    obj2.Add(integer);
-                else if (double.TryParse(item, out doublenum))
-                    obj3.Add(doublenum);
-                else obj4.Add(item);
+				if (int.TryParse(item, out integer))
+				{ obj2.Add(integer); }
+				else if (double.TryParse(ChangeCommasToPointsProcess(item), out doublenum))
+				{obj3.Add(doublenum);
+					Console.WriteLine(ChangeCommasToPointsProcess(item));
+				}
+				else obj4.Add(item);
 
 
             }
@@ -100,7 +134,7 @@ namespace HomeTask2_2
             double sum = 0;
             foreach (double item in obj)
             {
-                if (DigitsAfterComma(item) ==2)
+                
                 sum += item;
             }
 
@@ -133,7 +167,7 @@ namespace HomeTask2_2
                 Console.WriteLine(String.Format("{0,20:0.00}", item));
             }
 
-            Console.WriteLine(String.Format("{0,20:0.00}", AverageInt(obj)));
+            Console.WriteLine(String.Format("{0,20:0.00}", AverageDouble(obj)));
         }
 
         public void RightFormatOutputString(ArrayList obj)
@@ -142,9 +176,56 @@ namespace HomeTask2_2
             {
                 Console.WriteLine(String.Format("{0,20:0.00}", item));
             }
-
+			 
             Console.WriteLine(String.Format("{0,20:0.00}", AverageInt(obj)));
         }
 
+
+       public void NotNumSort(ArrayList obj)
+		{
+
+			string[] notNumArray = new string[obj.Count];
+			int i = 0;
+			foreach (string item in obj)
+			{
+				notNumArray[i] = item;
+				i++;
+			}
+
+			for (int j=0; j<notNumArray.Count()-1; j++)
+			{
+				 
+				if(notNumArray[j].Length > notNumArray[j+1].Length)
+				{
+					string temp;
+					temp = notNumArray[j];
+					notNumArray[j] = notNumArray[j + 1];
+					notNumArray[j + 1] = temp;
+				}
+
+
+			}
+
+			for (int j = 0; j < notNumArray.Count() - 1; j++)
+			{
+				if (notNumArray[j].Length == notNumArray[j + 1].Length)
+				{
+					if (String.Compare(notNumArray[j], notNumArray[j + 1]) > 0)
+					{
+						string temp;
+						temp = notNumArray[j];
+						notNumArray[j] = notNumArray[j + 1];
+						notNumArray[j + 1] = temp;
+					}
+				}
+			}
+
+			for (int j = 0; j < notNumArray.Count(); j++)
+			{
+				Console.WriteLine(notNumArray[j] + "&&&&");
+			}
+
+
+			}
     }
 }
